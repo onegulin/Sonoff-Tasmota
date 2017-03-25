@@ -77,7 +77,7 @@
 #define TELE_PERIOD            300               // [TelePeriod] Telemetry (0 = disable, 10 - 3600 seconds)
 
 // -- MQTT - Domoticz -----------------------------
-#define USE_DOMOTICZ                             // Enable Domoticz (+7k code, +0.3k mem) - Disable by //
+//#define USE_DOMOTICZ                             // Enable Domoticz (+7k code, +0.3k mem) - Disable by //
   #define DOMOTICZ_IN_TOPIC      "domoticz/in"   // [DomoticzInTopic]
   #define DOMOTICZ_OUT_TOPIC     "domoticz/out"  // [DomoticzOutTopic]
   #define DOMOTICZ_UPDATE_TIMER  0               // [DomoticzUpdateTimer] Send relay status (0 = disable, 1 - 3600 seconds) (Optional)
@@ -131,15 +131,15 @@
 
 //#define USE_DS18x20                              // Optional using OneWire library for multiple DS18B20 and/or DS18S20 (+2k code)
 
-#define USE_I2C                                  // I2C using library wire (+10k code, 0.2k mem) - Disable by //
+//#define USE_I2C                                  // I2C using library wire (+10k code, 0.2k mem) - Disable by //
   #define USE_BH1750                             // Add I2C code for BH1750 sensor
   #define USE_BMP                                // Add I2C code for BMP/BME280 sensor
   #define USE_HTU                                // Add I2C code for HTU21/SI7013/SI7020/SI7021 sensor
   #define USE_SHT                                // Add I2C emulating code for SHT1X sensor
 
-#define USE_IR_REMOTE                            // Send IR remote commands using library IRremoteESP8266 and ArduinoJson (+4k code, 0.3k mem)
+//#define USE_IR_REMOTE                            // Send IR remote commands using library IRremoteESP8266 and ArduinoJson (+4k code, 0.3k mem)
 
-#define USE_WS2812                               // WS2812 Led string using library NeoPixelBus (+8k code, +1k mem) - Disable by //
+//#define USE_WS2812                               // WS2812 Led string using library NeoPixelBus (+8k code, +1k mem) - Disable by //
   #define USE_WS2812_CTYPE     1                 // WS2812 Color type (0 - RGB, 1 - GRB)
 //  #define USE_WS2812_DMA                         // DMA supports only GPIO03 (= Serial TXD) (+1k mem)
                                                  //   When USE_WS2812_DMA is enabled expect Exceptions on Pow
@@ -156,10 +156,6 @@
 /*********************************************************************************************\
  * No user configurable items below
 \*********************************************************************************************/
-
-#if defined(USE_MQTT_TLS) && defined(USE_WEBSERVER)
-  #error "Select either USE_MQTT_TLS or USE_WEBSERVER as there is just not enough memory to play with"
-#endif
 
 #if (ARDUINO < 10610)
   #error "This software is supported with Arduino IDE starting from 1.6.10 and ESP8266 Release 2.3.0"
